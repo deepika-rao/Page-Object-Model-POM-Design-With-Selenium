@@ -1,22 +1,58 @@
-package com.crm.qa.testcases;
+package com.crm.qa.pages;
 
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.pages.LoginPage;
 
-public class HomePageTest extends TestBase{
-	LoginPage loginPage;
+public class HomePage extends TestBase{
 	
-	public HomePageTest(){
-		super();//using this it will not throw null pointer exception
+	@FindBy(xpath="//td[contains(text(),'User: Naveen K')]")
+	WebElement userNameLabel;
+	
+	@FindBy(xpath="//a[contains(text(),'Contacts')]")
+	WebElement contactsLink;
+	
+	@FindBy(xpath="//a[contains(text(),'Deals')]")
+	WebElement dealsLink;
+	
+	@FindBy(xpath="//a[contains(text(),'Tasks')]")
+	WebElement tasksLink;
+	
+	public HomePage(){
+		PageFactory.initElements(driver, this);// 'this' means current class objects. 		
 	}
 	
-	@BeforeMethod
-	public void setUp(){
-		initialization();
-		loginPage = new LoginPage();
-		loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+	public String verifyHomePageTitle(){
+		return driver.getTitle();
 	}
+	
+	public ContactsPage clickOnContactsLink(){
+		contactsLink.click();
+		return new ContactsPage();		
+	}
+	
+	public DealsPage clickOnDealsLink(){
+		dealsLink.click();
+		return new DealsPage();		
+	}
+	
+	public TasksPage clickOnTasksLink(){
+		tasksLink.click();
+		return new TasksPage();		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
