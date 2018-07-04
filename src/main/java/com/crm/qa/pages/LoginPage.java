@@ -3,7 +3,6 @@ package com.crm.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.crm.qa.base.TestBase;
 
 public class LoginPage extends TestBase{
@@ -15,7 +14,7 @@ public class LoginPage extends TestBase{
 	@FindBy(name="password")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@type='submit']")
+	@FindBy(xpath="//div[@class='input-group-btn']")
 	WebElement loginBtn;
 	
 	@FindBy(xpath="//button[@contains(text(),'Sign Up')]")
@@ -41,17 +40,19 @@ public class LoginPage extends TestBase{
 	public HomePage login(String un, String pwd){
 		username.sendKeys(un);
 		password.sendKeys(pwd);
-		loginBtn.click();
+		// METHOD 1 - use .click()
+		//loginBtn.click();
 		
+		// METHOD 2 - use .submit()
+		loginBtn.submit();
+		
+		// METHOD 3 - use javascriptexecutor
+		//JavascriptExecutor js = (JavascriptExecutor)driver; 
+	    //js.executeScript("arguments[0].click();", loginBtn);		
 		return new HomePage();// login page lands to homepage, so use return method
 	}
 	
 	
-	
-	
-	
-	
-	
-	
+}
 
 }
