@@ -8,7 +8,7 @@ import com.crm.qa.base.TestBase;
 
 public class HomePage extends TestBase{
 	
-	@FindBy(xpath="//td[contains(text(),'User: Naveen K')]")
+	@FindBy(xpath="//td[@class='headertext']")
 	WebElement userNameLabel;
 	
 	@FindBy(xpath="//a[contains(text(),'Contacts')]")
@@ -28,6 +28,10 @@ public class HomePage extends TestBase{
 		return driver.getTitle();
 	}
 	
+	public boolean verifyCorrectUserName(){
+		return userNameLabel.isDisplayed();
+	}
+	
 	public ContactsPage clickOnContactsLink(){
 		contactsLink.click();
 		return new ContactsPage();		
@@ -42,6 +46,20 @@ public class HomePage extends TestBase{
 		tasksLink.click();
 		return new TasksPage();		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
 	
 	
 	
