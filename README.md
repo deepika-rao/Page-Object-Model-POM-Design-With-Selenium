@@ -8,6 +8,14 @@ How to design Page Object Model With Selenium WebDriver:
 +What is Page Chaining Model
 +Use of PageFactory API in Selenium
 
+================================================
+This Project contains
+- Implementation of Data Driven Approach
+- Add @CacheLookup concept
+- Add WebDriver Fire Event
+- Add log4j API to generate logs
+- Add Extent Report - Test Result Report
+
 =================================================
 Technologies Used: 
 • Selenium WebDriver - v3.0.4 (Open Source) 
