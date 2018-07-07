@@ -9,10 +9,14 @@ import com.crm.qa.base.TestBase;
 public class HomePage extends TestBase{
 	
 	@FindBy(xpath="//td[@class='headertext']")
+	@CacheLookup //this annotation will store the element in cache, instead of looking from the page, for better performance of framework
 	WebElement userNameLabel;
 	
 	@FindBy(xpath="//a[contains(text(),'Contacts')]")
 	WebElement contactsLink;
+	
+	@FindBy(xpath="//a[contains(text(),'New Contact')]")
+	WebElement newContactLink;
 	
 	@FindBy(xpath="//a[contains(text(),'Deals')]")
 	WebElement dealsLink;
@@ -47,30 +51,12 @@ public class HomePage extends TestBase{
 		return new TasksPage();		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void clickOnNewContactLink(){
+		Actions action = new Actions(driver); //always use Actions class for mouse hover actions
+		action.moveToElement(contactsLink).build().perform();
+		newContactLink.click();
+	}
 	
 
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-}
