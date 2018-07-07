@@ -9,14 +9,16 @@ How to design Page Object Model With Selenium WebDriver:
 +Use of PageFactory API in Selenium
 
 ================================================
+
 This Project contains
 - Implementation of Data Driven Approach
 - Add @CacheLookup concept
-- Add WebDriver Fire Event
+- Add WebDriver Fire Event - to generate actions logs
 - Add log4j API to generate logs
 - Add Extent Report - Test Result Report
 
 =================================================
+
 Technologies Used: 
 • Selenium WebDriver - v3.0.4 (Open Source) 
 • JDK 1.8 (Java Development Kit) 
