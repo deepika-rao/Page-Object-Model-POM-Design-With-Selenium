@@ -8,6 +8,11 @@ How to design Page Object Model With Selenium WebDriver:
 +What is Page Chaining Model
 +Use of PageFactory API in Selenium
 
+===============================================
+
+**To generate proper Extent/HTML Report in Jenkins, use following script in Script Console of Jenkins:
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
+
 ================================================
 
 This Project contains
